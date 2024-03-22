@@ -2,16 +2,7 @@ Hi, im Matthew, Im currently 16 years old and I dream of ruling the progamming f
 Recently I am learning python from a free yt course, Im halfway thourg the course and I can proudly say with the info and knowledge I got, I was able ot make a mini proper project.
 The project is still in its child phase but I will improve it every chance I get.
 just run the code give belo in vscode :)
-
-
-
-
-
-
-
-
-
-
+        (((((( PLEASE OPEN IN RAW MODE!!!! ))))))
 
 
 
