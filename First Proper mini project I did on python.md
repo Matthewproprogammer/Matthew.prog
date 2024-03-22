@@ -6,8 +6,6 @@ just run the code give belo in vscode :)
 
 
 
-
-
 mainfile=str(input("Write your main file name= "))
 entry=open(f"{mainfile}","w")
 a=("\n")
@@ -49,76 +47,181 @@ if ans=="yes" or "Yes":
     print("How many lines would you like to list?")
     listamnt=(int(input("= ")))
     if listamnt==1:
+        lans=int(input("To not to loop press 1 to loop press 2\n= "))
+        if lans==1:
 
-        f=(open(f"{mainfile}" , "r"))
-        a=(input("write what you want to be in front of your 1st list= "))
+            f=(open(f"{mainfile}" , "r"))
+            a=(input("write what you want to be in front of your 1st list= "))
         
-        lines=(f.readlines())                
-        l1=(lines[0])
-        print(f" {a} {l1}")
-    
+            lines=(f.readlines())                
+            l1=(lines[0])
+            print(f" {a} {l1}")
+
+        elif lans==2:
+            sl1=(input("Write what you want in front of your each bytes\n= "))
+            splitz=input("what would you like to split the line with?\n= ")
+
+            f=open(mainfile, "r")
+            while True:
+               lines=(f.readline())
+               if not lines:
+                   break
+               l1=lines.split("," , " ")[0]
+               print(f"{sl1}{l1}{splitz}")
+
+
     elif listamnt==2:
+        lans=int(input("To not to loop press 1 to loop press 2\n= "))
+        if lans==1:
+            
+            f=(open(f"{mainfile}" , "r"))
+            a=(input("write what you want to be in front of your 1st list= "))
+            b=(input("write what you want to be in the front of your 2nd list= "))
         
-        f=(open(f"{mainfile}" , "r"))
-        a=(input("write what you want to be in front of your 1st list= "))
-        b=(input("write what you want to be in the front of your 2nd list= "))
-        
-        lines=(f.readlines())                
-        l1=(lines[0])
-        l2=(lines[1])
-        print(f" {a} {l1} {b} {l2}")
+            lines=(f.readlines())                
+            l1=(lines[0])
+            l2=(lines[1])
+            print(f" {a} {l1} {b} {l2}")
+
+
+        elif lans==2:
+            sl1=(input("Write what you want in front of your first lines each bytes\n= "))
+            sl2=(input("Write what you want in front of your second lines each bytes\n= "))
+            splita=input("what would you like to split the line with?\n= ")
+
+            f=open(mainfile, "r")
+
+            while True:
+               lines=(f.readline())
+               if not lines:
+                  break
+               l1=lines.split("," or " ")[0]
+               l2=lines.split("," or " ")[1]
+
+               print(f"{sl1}{l1}{splita}")      
+               print(f"{sl2}{l2}{splita}")      
+
 
     elif listamnt==3:
-
-        f=(open(f"{mainfile}" , "r"))
-        a=(input("write what you want to be in front of your 1st list= "))
-        b=(input("write what you want to be in front of your 2nd list= "))
-        c=(input("write what you want in front of your 3rd list= "))
+        lans=int(input("To not to loop press 1 to loop press 2\n= "))
+        if lans==1:
         
-        lines=(f.readlines())                
-        l1=(lines[0])
-        l2=(lines[1])
-        l3=(lines[2])
+            f=(open(f"{mainfile}" , "r"))
+            a=(input("write what you want to be in front of your 1st list= "))
+            b=(input("write what you want to be in front of your 2nd list= "))
+            c=(input("write what you want in front of your 3rd list= "))
+        
+            lines=(f.readlines())                
+            l1=(lines[0])
+            l2=(lines[1])
+            l3=(lines[2])
 
-        print(f" {a} {l1} {b} {l2} {c} {l3}")
+            print(f" {a} {l1} {b} {l2} {c} {l3}")
+
+        elif lans==2:
+            sl1=(input("Write what you want in front of your first lines each bytes\n= "))
+            sl2=(input("Write what you want in front of your second lines each bytes\n= "))
+            sl3=(input("Write what you want in front of your third lines each bytes\n= "))             
+            splite=input("what would you like to split the line with?\n= ")
+            
+            f=open(mainfile, "r")            
+            while True:
+               lines=(f.readline())
+               if not lines:
+                 break
+               l1=lines.split("," or " ")[0]
+               l2=lines.split("," or " ")[1]
+               l3=lines.split("," or " ")[2]
+
+               print(f"{sl1}{l1}{splite}")      
+               print(f"{sl2}{l2}{splite}")      
+               print(f"{sl3}{l3}{splite}")      
+  
 
     elif listamnt==4:
+        lans=int(input("To not to loop press 1 to loop press 2\n= "))
+        if lans==1:
 
-        f=(open(f"{mainfile}" , "r"))
-        a=(input("write what you want to be in front of your 1stlist= "))
-        b=(input("write what you want to be in front of your 2nd list= "))
-        c=(input("write what you want in front of your 3rd list= "))
-        d=(input("write what you want in front of your 4th list= "))
+            a=(input("write what you want to be in front of your 1stlist= "))
+            b=(input("write what you want to be in front of your 2nd list= "))
+            c=(input("write what you want in front of your 3rd list= "))
+            d=(input("write what you want in front of your 4th list= "))
+            f=(open(f"{mainfile}" , "r"))
         
-        lines=(f.readlines())                
-        l1=(lines[0])
-        l2=(lines[1])
-        l3=(lines[2])
-        l4=(lines[3])
+            lines=(f.readlines())                
+            l1=(lines[0])
+            l2=(lines[1])
+            l3=(lines[2])
+            l4=(lines[3])
 
-        print(f" {a} {l1} {b} {l2} {c} {l3} {d} {l4}")
- 
+            print(f" {a} {l1} {b} {l2} {c} {l3} {d} {l4}")
 
-    elif listamnt==4:
+        elif lans==2:
+            sl1=(input("Write what you want in front of your first lines each bytes\n= "))
+            sl2=(input("Write what you want in front of your second lines each bytes\n= "))
+            sl3=(input("Write what you want in front of your third lines each bytes\n= "))
+            sl4=(input("Write what you want in front of your fourth lines each bytes\n= "))             
+            splitr=input("what would you like to split the line with?\n= ")
+            
+            f=open(mainfile, "r")            
+            while True:
+               lines=(f.readline())
+               if not lines:
+                  break
+               l1=lines.split("," or " ")[0]
+               l2=lines.split("," or " ")[1]
+               l3=lines.split("," or " ")[2]
+               l4=lines.split("," or " ")[3]
 
-        f=(open(f"{mainfile}" , "r"))
-        a=(input("write what you want to be in front of your 1stlist= "))
-        b=(input("write what you want to be in front of your 2nd list= "))
-        c=(input("write what you want in front of your 3rd list= "))
-        d=(input("write what you want in front of your 4th list= "))
-        e=(input("write what you want in front of your 5th list= "))
+               print(f"{sl1}{l1}{splitr}")     
+               print(f"{sl2}{l2}{splitr}")     
+               print(f"{sl3}{l3}{splitr}")     
+               print(f"{sl4}{l4}{splitr}")     
+
+    elif listamnt==5:
+        lans=int(input("To not to loop press 1 to loop press 2\n= "))
+        if lans==1:
+            f=(open(f"{mainfile}" , "r"))
+            a=(input("write what you want to be in front of your 1stlist= "))
+            b=(input("write what you want to be in front of your 2nd list= "))
+            c=(input("write what you want in front of your 3rd list= "))
+            d=(input("write what you want in front of your 4th list= "))
+            e=(input("write what you want in front of your 5th list= "))
         
-        lines=(f.readlines())                
-        l1=(lines[0])
-        l2=(lines[1])
-        l3=(lines[2])
-        l4=(lines[3])
-        l5=(lines[4])
-        print(f" {a} {l1} {b} {l2} {c} {l3} {d} {l4} {e} {l5}")           
+            lines=(f.readlines())                
+            l1=(lines[0])
+            l2=(lines[1])
+            l3=(lines[2])
+            l4=(lines[3])
+            l5=(lines[4])
+            print(f" {a} {l1} {b} {l2} {c} {l3} {d} {l4} {e} {l5}")           
+
+        elif lans==2:
+            sl1=(input("Write what you want in front of your first lines each bytes\n= "))
+            sl2=(input("Write what you want in front of your second lines each bytes\n= "))
+            sl3=(input("Write what you want in front of your third lines each bytes\n= "))
+            sl4=(input("Write what you want in front of your fourth lines each bytes\n= "))
+            sl5=(input("Write what you want in front of your fifth lines each bytes\n= "))
+            splitW=(input("what would you like to split the line with?\n= "))
+            
+            f=open(f"{mainfile}", "r")
+            while True:
+                lines=(f.readline())
+                if not lines:
+                 break
+                l1=lines.split(",")[0]
+                l2=lines.split(",")[1]
+                l3=lines.split(",")[2]
+                l4=lines.split(",")[3]
+                l5=lines.split(",")[4]
+
+                print(f"{sl1}{l1}{splitW}")     
+                print(f"{sl2}{l2}{splitW}")     
+                print(f"{sl3}{l3}{splitW}")     
+                print(f"{sl4}{l4}{splitW}")     
+                print(f"{sl5}{l5}{splitW}")     
 
 else:
-    print("Worng input")
-
-
+    ("Worng input")
 
 
