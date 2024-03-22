@@ -4,6 +4,19 @@ The project is still in its child phase but I will improve it every chance I get
 just run the code give belo in vscode :)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 mainfile=str(input("Write your main file name= "))
 entry=open(f"{mainfile}","w")
 a=("\n")
