@@ -1,0 +1,96 @@
+just a me making a libary system(very new stage)
+[open in raw!!!]
+
+
+class libaryname:
+    def __init__(self,Lname):
+        self.lname=Lname
+
+    def Libaryname(self):
+        print(f"The name of your libary is {self.lname}")
+
+class Booksname():
+    def __init__(self,book1,book2,book3,book4,book5):
+        self.book1=book1
+        self.book2=book2
+        self.book3=book3
+        self.book4=book4
+        self.book5=book5
+
+    def bookname(self):
+        print(f"Your 1st book is {self.book1}.\nYour 2nd book is {self.book2}.\nYour 3rd book is {self.book3}.\nYour 4th book is {self.book4},\nYour 5th book is {self.book5}.")
+
+mainans=int(input("Would you like to creat a new file or modify existing one?\nIf you wanna create type 1 if modify type 2\n="))
+if mainans==1:
+        Libaryname=(input("Name your libary\n="))
+        a=libaryname(Libaryname)
+        book1=(input("Write your 1st books name\n="))
+        book2=(input("Write your 2nd books name\n="))
+        book3=(input("Write your 3rd books name\n="))
+        book4=(input("Write your 4th books name\n="))
+        book5=(input("Write your 5th books name\n="))
+        b=Booksname(book1,book2,book3,book4,book5)
+        a.Libaryname()
+        b.bookname()
+        f=open(f"{Libaryname}" , "w")
+        f.write(f"1st book is {book1}\n2nd book is {book2}\n3rd book is {book3}\n4th book is {book4}\n5th book is {book5}")
+        f.close()
+
+        print("libary created\n would you like to add any books in there?")
+        ans=(input("= "))
+        if ans=="yes":
+            print("How many books would you like to add?")
+            ans1=(int(input("= ")))
+            if ans1==1:
+                b1=(input("Write your 6th Books name.\n= "))
+                f1=open(f"{Libaryname}" , "w")
+                f1.write(f"1st book is {book1}\n2nd book is {book2}\n3rd book is {book3}\n4th book is {book4}\n5th book is {book5}\n6th book is {b1}")
+                f1.close()
+                print("Done!!")
+            if ans1==2:
+                b1=(input("Write your 6th Books name.\n= "))
+                b2=(input("Write your 7th Books name.\n= "))
+                f1=open(f"{Libaryname}" , "w")
+                f1.write(f"1st book is {book1}\n2nd book is {book2}\n3rd book is {book3}\n4th book is {book4}\n5th book is {book5}\n6th book is {b1}\n7th book is {b2}")
+                f1.close()
+                print("Done!!")
+            if ans1==3:
+                b1=(input("Write your 6th Books name.\n= "))
+                b2=(input("Write your 7th Books name.\n= "))
+                b3=(input("Write your 8th Books name.\n= "))
+                f1=open(f"{Libaryname}" , "w")
+                f1.write(f"1st book is {book1}\n2nd book is {book2}\n3rd book is {book3}\n4th book is {book4}\n5th book is {book5}\n6th book is {b1}\n7th book is {b2}\n8th book is {b3}")
+                f1.close()
+                print("Done!!")
+            if ans1==4:
+                b1=(input("Write your 6th Books name.\n= "))
+                b2=(input("Write your 7th Books name.\n= "))
+                b3=(input("Write your 8th Books name.\n= "))
+                b4=(input("Write your 9th Books name.\n= "))
+                f1=open(f"{Libaryname}" , "w")
+                f1.write(f"1 book is {book1}\n2 book is {book2}\n3 book is {book3}\n4 book is {book4}\n5 book is {book5}\n6 book is {b1}\n7 book is {b2}\n8 book is {b3}\n9 book is {b4}")
+                f1.close()
+                print("Done!!")
+            if ans1==5:
+                b1=(input("Write your 6th Books name.\n= "))
+                b2=(input("Write your 7th Books name.\n= "))
+                b3=(input("Write your 8th Books name.\n= "))
+                b4=(input("Write your 9th Books name.\n= "))
+                b5=(input("Write your 10th Books name.\n= "))
+                f1=open(f"{Libaryname}" , "w")
+                f1.write(f"1 book is {book1}\n2 book is {book2}\n3 book is {book3}\n4 book is {book4}\n5 book is {book5}\n6 book is {b1}\n7 book is {b2}\n8 book is {b3}\n9 book is {b4}\n10 book is {b5}")
+                f1.close()
+                print("Done!!")    
+        elif ans=="no":
+            print("Thank you for using this application")
+            f1=open(f"{Libaryname}" , "r")
+            f1.close()
+
+elif mainans==2:
+        filename=input("Please put your file name word by word\n= ")
+        numofbook=int(input("what number of book would you like to add?\n= "))
+        bookname=(input("Write the name of your book.\n= "))
+        h=open(f"{filename}","a")
+        h.write(f"\n{numofbook} book is {bookname}")
+        h.close()
+        print("Done!!")
