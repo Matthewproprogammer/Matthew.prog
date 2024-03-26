@@ -1,0 +1,170 @@
+import os
+print("Welcome to Matthews Result maker")
+mainans=(input("Would you like to create a new or view an existing result list?\nIf you wanna make a new type 1 or view an existing one type 2 \nOr if you want to make or see the results of a single Student press 3 or 4\nAnd if you would like to add a new result in an existing result list press 5\n=  "))
+if mainans=="1":
+        class studentINFO:
+            def __init__ (self,name,em,mm,sm):
+                self.name=name
+                self.em=em
+                self.mm=mm
+                self.sm=sm
+
+            @classmethod        
+            def stringbreak(cls,string):
+                return cls(str(string.split("-")[0]) , str(string.split("-")[1]) , str(string.split("-")[2]) , str(string.split("-")[3]))
+
+            def showSI(self):
+                return (str(f"{self.name} got {self.em} in English and {self.mm} in Maths and {self.sm} in Science"))
+
+        Studentamount=(int(input("Of how many students are you seeing to make result list of?\n= ")))
+        if Studentamount==1:
+            dirname=(input("Write your directory name\n= "))
+            filename=(input("Write your Class\n= "))
+            s1info=input("Write the name and result of the student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s1=(studentINFO.stringbreak(f"{s1info}"))
+            a=(s1.showSI())
+            os.mkdir(f"{dirname}")
+            f=open(f"{dirname}/Class {filename}.txt" , "w")
+            f.write(f"{a}")
+            f.close()
+        elif Studentamount==2:
+            dirname=(input("Write your directory name\n= "))    
+            filename=(input("Write your Class\n= "))            
+            s1info=input("Write the name and result of the 1st student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s2info=input("Write the name and result of the 2nd student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+
+            s1=(studentINFO.stringbreak(f"{s1info}"))
+            s2=(studentINFO.stringbreak(f"{s2info}"))
+    
+            a=(s1.showSI())
+            b=(s2.showSI())
+            os.mkdir(f"{dirname}")
+            f=open(f"{dirname}/Class {filename}.txt" , "w")
+            f.write(f"{a}\n{b}")
+            f.close()
+        elif Studentamount==3:
+            dirname=(input("Write your directory name\n= "))
+            filename=(input("Write your Class\n= "))
+            s1info=input("Write the name and result of the 1st student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s2info=input("Write the name and result of the 2nd student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s3info=input("Write the name and result of the 3rd student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+
+            s1=(studentINFO.stringbreak(f"{s1info}"))
+            s2=(studentINFO.stringbreak(f"{s2info}"))
+            s3=(studentINFO.stringbreak(f"{s3info}"))
+    
+            a=(s1.showSI())
+            b=(s2.showSI())
+            c=(s3.showSI())
+            os.mkdir(f"{dirname}")
+            f=open(f"{dirname}/Class {filename}.txt" , "w")
+            f.write(f"{a}\n{b}\n{c}")
+            f.close()
+        elif Studentamount==4:
+            dirname=(input("Write your directory name\n= "))    
+            filename=(input("Write your Class\n= "))
+            s1info=input("Write the name and result of the 1st student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s2info=input("Write the name and result of the 2nd student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s3info=input("Write the name and result of the 3rd student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s4info=input("Write the name and result of the 4th student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+
+            s1=(studentINFO.stringbreak(f"{s1info}"))
+            s2=(studentINFO.stringbreak(f"{s2info}"))
+            s3=(studentINFO.stringbreak(f"{s3info}"))
+            s4=(studentINFO.stringbreak(f"{s4info}"))
+    
+            a=(s1.showSI())
+            b=(s2.showSI())
+            c=(s3.showSI())
+            d=(s4.showSI())
+            os.mkdir(f"{dirname}")
+            f=open(f"{dirname}/Class {filename}.txt" , "w")
+            f.write(f"{a}\n{b}\n{c}\n{d}")
+            f.close()
+        elif Studentamount==5:
+            dirname=(input("Write your directory name\n= "))    
+            filename=(input("Write your Class\n= "))
+            s1info=input("Write the name and result of the 1st student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s2info=input("Write the name and result of the 2nd student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s3info=input("Write the name and result of the 3rd student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s4info=input("Write the name and result of the 4th student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+            s5info=input("Write the name and result of the 5th student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+
+            s1=(studentINFO.stringbreak(f"{s1info}"))
+            s2=(studentINFO.stringbreak(f"{s2info}"))
+            s3=(studentINFO.stringbreak(f"{s3info}"))
+            s4=(studentINFO.stringbreak(f"{s4info}"))
+            s5=(studentINFO.stringbreak(f"{s5info}"))
+    
+            a=(s1.showSI())
+            b=(s2.showSI())
+            c=(s3.showSI())
+            d=(s4.showSI())
+            e=(s5.showSI())
+
+            os.mkdir(f"{dirname}")
+            f=open(f"{dirname}/Class {filename}.txt" , "w")
+            f.write(f"{a}\n{b}\n{c}\n{d}\n{e}")
+            f.close()
+elif mainans=="2":
+    EXTdir=(input("Put you existing Directory name\n= "))
+    EXTfile=(input("Put your existing class name\n= "))
+
+
+    ExistingRL=open(f"{EXTdir}/Class {EXTfile}.txt" , "r")
+    ExistingRLP=ExistingRL.read()
+    ExistingRL.close()
+    print(ExistingRLP)
+
+
+elif mainans=="3":
+    class studentINFO:
+        def __init__ (self,name,em,mm,sm):
+            self.name=name
+            self.em=em
+            self.mm=mm
+            self.sm=sm
+
+        @classmethod        
+        def stringbreak(cls,string):
+            return cls(str(string.split("-")[0]) , str(string.split("-")[1]) , str(string.split("-")[2]) , str(string.split("-")[3]))
+
+        def showSI(self):
+            return (str(f"{self.name} got {self.em} in English and {self.mm} in Maths and {self.sm} in Science"))
+        
+    dirname=(input("Write your indvidual result directory name\n= "))
+    filename=(input("Write your individual Class\n= "))
+    INDIVSinfo=input("Write the name and result of the student in /NAME-MARKS-MARKS-MARKS\ format\n= ")
+    s=(studentINFO.stringbreak(f"{INDIVSinfo}"))
+    a=(s.showSI())
+    os.mkdir(f"[Individual] {dirname}")
+    f=open(f"[Individual] {dirname}/Class {filename}.txt" , "w")
+    f.write(f"{a}")
+    f.close()
+    print("DONE!!!")
+elif mainans=="4":
+    EXTdir=(input("Put you existing Individual Directory name\n= "))
+    EXTfile=(input("Put your existing Individual class name\n= "))
+
+
+    ExistingRL=open(f"[Individual] {EXTdir}/Class {EXTfile}.txt" , "r")
+    ExistingRLP=ExistingRL.read()
+    ExistingRL.close()
+    print(ExistingRLP)
+
+elif mainans=="5":
+    EXTdir=(input("Put you existing Directory name\n= "))
+    EXTfile=(input("Put your existing class name\n= "))
+    ADDname=(input("Write your student name\n= "))
+    ADDengmarks=(input("Write your students ENG marks\n= "))
+    ADDmathmarks=(input("Write your students MATHS marks\n= "))
+    ADDsciencemarks=(input("Write your students SCIENCE marks\n= "))
+    addedline=(f"{ADDname} got {ADDengmarks} in English and {ADDmathmarks} in Maths and {ADDsciencemarks} in Science")
+
+
+    ExistingRL=open(f"{EXTdir}/Class {EXTfile}.txt" , "a")
+    addednewline=ExistingRL.write(f"\n{addedline}")
+    ExistingRL.close()
+
+else:
+    print("Try following the steps next time")
