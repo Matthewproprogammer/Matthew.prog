@@ -1,0 +1,299 @@
+import win32com.client as wincl
+speak=wincl.Dispatch("SAPI.SpVoice")
+
+import time
+
+
+class NormalCIV:
+    def __init__(self,name,age,job):
+        self.name=name
+        self.age=age
+        self.job=job
+    @classmethod
+    def stringbreak(cls,string):
+        return (cls(string.split("-")[0],string.split("-")[1],string.split("-")[2]))
+        
+    def showinfo(self):
+        return(f"Name= {self.name}\nAge= {self.age}\nJob= {self.job}")
+class SpeciaCIV(NormalCIV):
+    def __init__(self, name, age, job , speciality):
+        super().__init__(name, age, job)
+        self.speciality=speciality
+    @classmethod
+    def stringbreak(cls,string):
+        return (cls(string.split("-")[0],string.split("-")[1],string.split("-")[2],string.split("-")[3]))    
+    def showinfo(self):
+        return(f"Name= {self.name}\nAge= {self.age}\nJob= {self.job}\nSpeciality= {self.speciality}")
+class EliteCIV(SpeciaCIV):
+    def __init__(self, name, age, job, speciality , eliteR):
+        super().__init__(name, age, job, speciality)
+        self.eliteR=eliteR
+    @classmethod
+    def stringbreak(cls,string):
+        return (cls(string.split("-")[0],string.split("-")[1],string.split("-")[2],string.split("-")[3],string.split("-")[4]))    
+    def showinfo(self):
+        return (f"Name= {self.name}\nAge= {self.age}\nJob= {self.job}\nSpeciality= {self.speciality}\nElite Ranking= {self.eliteR}")
+
+mainans=int(input("If you are looking to make a list of normal civilians press 1\nIf you are looking to make a list of civilians with speciality press 2\nIf you are looking to make a list of civilians with elite rank and speciality press 3\nIf you are looking to modify an existing list press 4\nAnd if you would like to view an existing list press 5\n=  "))
+if mainans==1:
+    ans=(int(input("Of how many people are you looking to make an info list?\n= ")))
+    filename=(input("Write your file name\n= "))
+    if ans==1:
+        info=(input("Put the name , age , job of your civilian in NAME-AGE-JOB format\n= "))
+        a1=NormalCIV.stringbreak(f"{info}")
+        file=open(f"[Normal Civilian]{filename}" , "w")
+        file.write(a1.showinfo())
+        BE=time.time()
+        file.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+
+    elif ans==2:
+        info=(input("Put the name , age , job of your civilian in NAME-AGE-JOB format\n= "))
+        info2=((input("Put the name , age , job of your 2nd civilian in NAME-AGE-JOB format\n= ")))
+        a1=NormalCIV.stringbreak(f"{info}")
+        a2=NormalCIV.stringbreak(f"{info2}")
+
+        file=open(f"[Normal Civilian] {filename}" , "w")
+        file.write(f"{a1.showinfo()}\n===========================\n{a2.showinfo()}")
+        BE=time.time()
+        file.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+    elif ans==3:
+        info=(input("Put the name , age , job of your civilian in NAME-AGE-JOB format\n= "))
+        info2=((input("Put the name , age , job of your 2nd civilian in NAME-AGE-JOB format\n= ")))
+        info3=((input("Put the name , age , job of your 3rd civilian in NAME-AGE-JOB format\n= ")))
+
+        a1=NormalCIV.stringbreak(f"{info}")
+        a2=NormalCIV.stringbreak(f"{info2}")
+        a3=NormalCIV.stringbreak(f"{info3}")
+
+        file=open(f"[Normal Civilian] {filename}" , "w")
+        file.write(f"{a1.showinfo()}\n===========================\n{a2.showinfo()}\n===========================\n{a3.showinfo()}")
+        BE=time.time()
+        file.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+
+elif mainans==2:
+    ans=(int(input("Of how many people are you looking to make an info list?\n= ")))
+    filename=(input("Write your file name\n= "))
+    if ans==1:
+        info=(input("Put the name , age , job , speciality , of your civilian in NAME-AGE-JOB-SPECIALITY format\n= "))
+        a1=SpeciaCIV.stringbreak(f"{info}")
+
+        file=open(f"[Special Civilian] {filename}" , "w")
+        file.write(f"{a1.showinfo()}")
+        BE=time.time()
+        file.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+    elif ans==2:
+        info=(input("Put the name , age , job , speciality , of your civilian in NAME-AGE-JOB-SPECIALITY format\n= "))
+        info2=(input("Put the name , age , job , speciality , of your 2nd civilian in NAME-AGE-JOB-SPECIALITY format\n= "))
+
+        a1=SpeciaCIV.stringbreak(f"{info}")
+        a2=SpeciaCIV.stringbreak(f"{info2}")
+        
+        file=open(f"[Special Civilian] {filename}" , "w")
+        file.write(f"{a1.showinfo()}\n===========================\n{a2.showinfo()}")
+        BE=time.time()
+        file.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+    elif ans==3:
+        info=(input("Put the name , age , job , speciality , of your civilian in NAME-AGE-JOB-SPECIALITY format\n= "))
+        info2=(input("Put the name , age , job , speciality , of your 2nd civilian in NAME-AGE-JOB-SPECIALITY format\n= "))
+        info3=(input("Put the name , age , job , speciality , of your 3rd civilian in NAME-AGE-JOB-SPECIALITY format\n= "))
+
+        a1=SpeciaCIV.stringbreak(f"{info}")
+        a2=SpeciaCIV.stringbreak(f"{info2}")
+        a3=SpeciaCIV.stringbreak(f"{info3}")
+        
+        file=open(f"[Special Civilian] {filename}" , "w")
+        file.write(f"{a1.showinfo()}\n===========================\n{a2.showinfo()}\n===========================\n{a3.showinfo()}")
+        BE=time.time()
+        file.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+elif mainans==3:
+    ans=(int(input("Of how many people are you looking to make an info list?\n= ")))
+    filename=(input("Write your file name\n= "))
+
+    if ans==1:
+        info=(input("Put the name , age , job , speciality , of your civilian in NAME-AGE-JOB-SPECIALITY format\n= "))
+        a1=EliteCIV.stringbreak(f"{info}")
+
+        file=open(f"[Elite Civilian] {filename}" , "w")
+        file.write(f"{a1.showinfo()}")
+        BE=time.time()
+        file.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)    
+    elif ans==2:
+        info=(input("Put the name , age , job , speciality , Elite rank of your civilian in NAME-AGE-JOB-SPECIALITY-ELITE RANK format\n= "))
+        info2=(input("Put the name , age , job , speciality , Elite rank of your civilian in NAME-AGE-JOB-SPECIALITY-ELITE RANK format\n= "))
+
+        a1=EliteCIV.stringbreak(f"{info}")
+        a2=EliteCIV.stringbreak(f"{info2}")
+
+        file=open(f"[Elite Civilian] {filename}" , "w")
+        file.write(f"{a1.showinfo()}\n===========================\n{a2.showinfo()}")
+        BE=time.time()
+        file.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+    elif ans==3:
+        info=(input("Put the name , age , job , speciality , Elite rank of your civilian in NAME-AGE-JOB-SPECIALITY-ELITE RANK format\n= "))
+        info2=(input("Put the name , age , job , speciality , Elite rank of your civilian in NAME-AGE-JOB-SPECIALITY-ELITE RANK format\n= "))
+        info3=(input("Put the name , age , job , speciality , Elite rank of your civilian in NAME-AGE-JOB-SPECIALITY-ELITE RANK format\n= "))
+
+        a1=EliteCIV.stringbreak(f"{info}")
+        a2=EliteCIV.stringbreak(f"{info2}")
+        a3=EliteCIV.stringbreak(f"{info3}")
+
+        file=open(f"[Elite Civilian] {filename}" , "a")
+        file.write(f"{a1.showinfo()}\n===========================\n{a2.showinfo()}\n===========================\n{a3.showinfo()}")
+        BE=time.time()
+        file.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+elif mainans==4:
+    replaceans=int(input("If you want to replace a normal civ list press 1, and press 2 foe a special civ is and 3 for elite ranking one\n= "))
+    nfilename=(input("Put you file name word to word without the [ANYTHING Civilian]\n= "))
+    if replaceans==1:
+        Ninfo=(input("Put the name , age , job of your civilian in NAME-AGE-JOB format\n= "))
+        n1=NormalCIV.stringbreak(Ninfo)
+        n=open(f"[Normal Civilian] {nfilename}" , "a")
+        n.write(f"\n===========================\n{n1.showinfo()}")
+        BE=time.time()
+        n.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)    
+    elif replaceans==2:
+        Sinfo=(input("Put the name , age , job of your Special civilian in NAME-AGE-JOB-SPECIALITY format\n= "))
+        s1=SpeciaCIV.stringbreak(Sinfo)
+        s=open(f"[Special Civilian] {nfilename}" , "a")
+        s.write(f"\n===========================\n{s1.showinfo()}")
+        BE=time.time()
+        s.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+    elif replaceans==3:
+        Einfo=(input("Put the name , age , job of your ELite civilian in NAME-AGE-JOB-SPECIALITY-ELITERANKING format\n= "))
+        e1=EliteCIV.stringbreak(Einfo)
+        e=open(f"[Elite Civilian] {nfilename}" , "a")
+        e.write(f"\n===========================\n{e1.showinfo()}")
+        BE=time.time()
+        e.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+elif mainans==5:
+    viewans=(int(input("If you would like to see a normal civ list pree 1 or press 2 and 3 for special and elite civs\n= ")))
+    if viewans==1:
+        normalfileN=(input("Write your file name\n= "))
+        nm=open(f"[Normal Civilian] {normalfileN}" , "r")
+        a=nm.read()
+        print(a)
+        BE=time.time()
+        nm.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+    elif viewans==2:
+        SPCfileN=(input("Write your file name\n= "))
+        sm=open(f"[Special Civilian] {SPCfileN}" , "r")
+        a1=sm.read()
+        print(a1)
+        BE=time.time()
+        sm.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+    elif viewans==3:
+        ELfileN=(input("Write your file name\n= "))
+        em=open(f"[Elite Civilian] {ELfileN}" , "r")
+        a2=em.read()
+        print(a2)
+        BE=time.time()
+        em.close()
+        AE=time.time()-BE
+        print(f"Operation took {AE} seconds")
+        T=time.localtime()
+        PT=time.strftime("%Y-%m-%d %H:%M:%S" , T)
+        v=(f"Sucessfully executed at {PT}")
+        print(f"Sucessfully executed at {PT}")        
+        speak.Speak(v)
+    else:
+        print("Wrong input!!")
+else:
+  print("Wrong input!!")
